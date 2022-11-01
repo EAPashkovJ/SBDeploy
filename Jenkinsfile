@@ -1,11 +1,22 @@
 pipeline {
     agent any
+       tools {
+            maven "MAVEN"
+            jdk "JDK"
+        }
+         stages {
+                stage('Initialize'){
+                    steps{
+                        echo "PATH = ${M2_HOME}/bin:${PATH}"
+                        echo "M2_HOME = /opt/maven"
+                    }
+                }
 
     stages {
         stage('Build') {
             steps {
                 git 'https://github.com/EAPashkovJ/SBDeploy.git'
-                sh 'mvn -B -DskipTests clean package'
+           sh 'mvn -B -DskipTests clean package'
                 // bat '.\mvn clean compile'
             }
         }
@@ -21,5 +32,10 @@ pipeline {
                 }
             }
         }
+//         stage('SBDeploy'){
+//         stages{
+//
+//         }
+//         }
     }
 }
