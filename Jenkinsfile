@@ -12,11 +12,11 @@
                 }
             }
             stage('Build') {
-                        steps {
-                            sh 'mvn -B -DskipTests clean package'
-                        }
-                    }
+                steps {
+                    sh 'mvn -B -DskipTests clean package'
+                }
             }
+
             stage('Test') {
                 steps {
                     sh 'mvn test'
@@ -25,11 +25,11 @@
         }
 
 
-        post {
+    post {
 
-            always {
-                junit(allowEmptyResults:true,
-                        testResults:'*/test-reports/.xml'      )
-            }
+        always {
+            junit(allowEmptyResults:true,
+                    testResults:'*/test-reports/.xml'      )
         }
-    }}
+    }
+}
