@@ -11,11 +11,8 @@ pipeline {
 
        stage('Build Code'){
            steps{
-            echo "Bulding Code"
-            echo "M2_HOME = ${M2_HOME}"
-           dir("OAuth2.0"){
-            bat 'mvn clean package'
-           }
+
+            bat 'mvn compile package'
            }
           }
         stage('Test') {
