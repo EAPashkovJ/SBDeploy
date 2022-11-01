@@ -12,13 +12,13 @@ pipeline {
        stage('Build Code'){
            steps{
 
-            bat 'mvn compile package'
+            sh 'mvn compile package'
            }
           }
         stage('Test') {
             steps {
                 sh './mvn test'
-                // bat '.\mvn test'
+
             }
 
             post {
