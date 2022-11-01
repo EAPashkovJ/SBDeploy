@@ -32,4 +32,4 @@
                         testResults:'*/test-reports/.xml'      )
             }
         }
-    }
+    }}
