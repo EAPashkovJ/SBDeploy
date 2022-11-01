@@ -1,6 +1,7 @@
 package com.example.sbdeploy.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -17,7 +18,7 @@ public class MainController {
         return "Hello again";
     }
 
-    @GetMapping("/page")
+    @RequestMapping("/page")
     public String  htmlret(){
         return "helloPage";
     }
