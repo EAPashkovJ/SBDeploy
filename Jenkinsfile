@@ -13,7 +13,7 @@
             }
             stage('Build') {
                 steps {
-                    dir("/var/lib/jenkins/workspace/demopipelinetask/SBDeploy") {
+                    dir("/var/lib/jenkins/workspace/SBDeploy") {
                         sh 'mvn -B -DskipTests clean package'
                     }
                 }
