@@ -12,13 +12,15 @@ pipeline {
                     }
                 }
 
-        stage('Build') {
-            steps {
-                git 'https://github.com/EAPashkovJ/SBDeploy.git'
-           sh 'mvn -B -DskipTests clean package'
-                // bat '.\mvn clean compile'
-            }
-        }
+       stage('Build Code'){
+           steps{
+            echo "Bulding Code"
+            echo "M2_HOME = ${M2_HOME}"
+           dir("OAuth2.0"){
+            bat 'mvn clean package'
+           }
+           }
+          }
         stage('Test') {
             steps {
                 sh './mvn test'
