@@ -2,19 +2,21 @@ pipeline {
     agent any
 
          stages {
-//                 stage('Initialize'){
-//                     steps{
-//                         echo "PATH = ${M2_HOME}/bin:${PATH}"
-//                         echo "M2_HOME = /opt/maven"
-//                     }
-//                 }
 
-       stage('Build Code'){
-           steps{
+ tools {
+    maven 'M3'
+  }
+  stages {
+   stage('init') {
+      checkout scm
+   }
+  stage('build'){
+        withMaven(maven: 'mvn') {
+            sh "mvn clean package"
+        }
+    }
 
-            sh 'mvn compile package'
-           }
-          }
+
         stage('Test') {
             steps {
                 sh './mvn test'
