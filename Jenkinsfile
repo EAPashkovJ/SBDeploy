@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 git 'https://github.com/EAPashkovJ/SBDeploy.git'
-                sh './mvn clean compile'
+                sh 'mvn -B -DskipTests clean package'
                 // bat '.\mvn clean compile'
             }
         }
