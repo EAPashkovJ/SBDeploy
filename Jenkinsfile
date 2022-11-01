@@ -33,4 +33,4 @@
                         testResults:'*/test-reports/.xml'      )
             }
         }
-    }}
+    }
