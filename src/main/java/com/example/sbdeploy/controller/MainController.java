@@ -1,12 +1,13 @@
 package com.example.sbdeploy.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-public class MainController {
 
+@Controller
+public class MainController {
 
     @GetMapping("/")
     public String Hello(){
@@ -20,7 +21,7 @@ public class MainController {
 
     @RequestMapping("/page")
     public String  htmlret(){
-        return "helloPage";
+        return "htmlPage";
     }
 
 }
