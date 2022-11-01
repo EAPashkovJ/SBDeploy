@@ -12,11 +12,10 @@
                 }
             }
             stage('Build') {
-                steps {
-                    dir("/var/lib/jenkins/workspace/SBDeploy") {
-                        sh 'mvn -B -DskipTests clean package'
+                        steps {
+                            sh 'mvn -B -DskipTests clean package'
+                        }
                     }
-                }
             }
             stage('Test') {
                 steps {
