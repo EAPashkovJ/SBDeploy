@@ -17,4 +17,9 @@ public class MainController {
         return "Hello again";
     }
 
+    @GetMapping("/page")
+    public String  htmlret(){
+        return "helloPage";
+    }
+
 }
