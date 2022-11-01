@@ -6,7 +6,7 @@ pipeline {
             steps {
                 git 'https://github.com/EAPashkovJ/SBDeploy.git'
                 sh './mvnw clean compile'
-                // bat '.\\mvnw clean compile'
+                // bat './/mvnw clean compile'
             }
         }
         stage('Test') {
