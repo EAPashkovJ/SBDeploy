@@ -12,4 +12,9 @@ public class MainController {
         return "Hello world";
     }
 
+    @GetMapping("/hello")
+    public String  newHello (){
+        return "Hello again";
+    }
+
 }
