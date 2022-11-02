@@ -15,7 +15,7 @@ class SbDeployApplicationTests {
     void HelloShouldReturnHelloWorld() {
 
         String str = mainController.Hello();
-        String expStr = "Hello world!";
+        String expStr = "Hello world";
 
         Assertions.assertEquals(expStr, str);
     }
