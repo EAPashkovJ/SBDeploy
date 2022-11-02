@@ -10,6 +10,4 @@ public class SbDeployApplication {
         SpringApplication.run(SbDeployApplication.class, args);
     }
 
-
-
 }
