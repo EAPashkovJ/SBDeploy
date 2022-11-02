@@ -1,36 +1,32 @@
  pipeline {
-        agent any
-        tools {
-            maven "maven"
-            // jdk "jdk-8"
+     agent any
+     tools {
+       maven "maven"
         }
-        stages {
-            stage('Initialize') {
-                steps {
-                    echo "PATH = ${M2_HOME}/bin:${PATH}"
-                    echo "M2_HOME = /opt/maven"
-                }
-            }
-            stage('Build') {
-                steps {
-                    sh 'mvn -B -DskipTests clean package'
-
-                }
-            }
-
-            stage('Test') {
-                steps {
-                    sh 'mvn test'
-                }
-            }
+     stages {
+        stage('Initialize') {
+              steps {
+              echo "PATH = ${M2_HOME}/bin:${PATH}"
+              echo "M2_HOME = /opt/maven"
         }
+        }
+        stage('Build') {
+              steps {
+              sh 'mvn -B -DskipTests clean package'
 
-
+        }
+        }
+        stage('Test') {
+              steps {
+              sh 'mvn test'
+        }
+        }
+        }
     post {
 
-        always {
+       always {
             junit(allowEmptyResults:true,
-                    testResults:'*/test-reports/.xml'      )
+                         testResults:'*/test-reports/.xml')
         }
     }
 }
